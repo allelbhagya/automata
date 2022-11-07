@@ -1,4 +1,10 @@
-states = ['q0','q1','q2','q3','D']
+#Q = ['q0','q1','q2','q3','D'] set of all states
+#summation - ['a','b'] set of input symbols
+#q = ['q0'] initial state
+#F - ['q3'] - set of final states
+#delta - transition function
+
+
 def q0(string):
     if len(string)<2:
         return 'not present in language'
@@ -36,6 +42,7 @@ def dead(string):
         return 'string is ??'
     else:
         return 'not present in language/dead state'
+
 print("\nLanguage containing all the strings starting with 'aa' or 'bb' \n")
-x = str(input())
-print(q0(x))
+string = str(input())
+print(q0(string))
