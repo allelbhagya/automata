@@ -38,9 +38,6 @@ def q3(string):
     else:
         return 'not in language'
 def dead(string):
-    if len(string)==2:
-        return 'string is ??'
-    else:
         return 'not present in language/dead state'
 
 print("\nLanguage containing all the strings starting with 'aa' or 'bb' \n")
