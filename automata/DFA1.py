@@ -4,7 +4,6 @@
 #F - ['q3'] - set of final states
 #delta - transition function
 
-
 def q0(string):
     if len(string)<2:
         return 'not present in language'
@@ -12,16 +11,15 @@ def q0(string):
         return q1(string)
     elif string[0] == 'b':
         return q2(string)
+    else:
+        return 'not present in language'
 def q1(string):
     if string[1] == 'a':
-        if len(string)>2:
-            return q3(string)
-        else:
-            return 'string is present in the language'
+        return q3(string)
     elif string[1]=='b':
         return dead(string)
     else:
-        return 'not in language'
+        return 'not present in language'
 def q2(string):
     if string[1] == 'b':
         if len(string)>2:
@@ -31,12 +29,15 @@ def q2(string):
     elif string[1]=='a':
         return dead(string)
     else:
-        return 'not in language'
+        return 'not present in language'
 def q3(string):
-    if string[2]=='a' or string[2]=='b':
+    if len(string)==2:
         return 'string is present in language'
     else:
-        return 'not in language'
+        for i in string[2:]:
+            if i!='a' or i!='b':
+                return 'not present in language'
+        return 'string is present in language'
 def dead(string):
         return 'not present in language/dead state'
 
