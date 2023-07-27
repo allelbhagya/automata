@@ -1,3 +1,5 @@
+# strings ending with bba
+
 def q0(string):
     if string[0]=='a':
         return q1(string)
